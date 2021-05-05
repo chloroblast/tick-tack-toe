@@ -57,13 +57,11 @@ def check_win(symbol):
 
 print_match()
 current_symbol = "X"
-free_coordinates = 9
 
 while True:
     enter_coordinates(current_symbol)
     print_match()
 
-    free_coordinates = free_coordinates - 1
     x_wins = check_win('X')
     o_wins = check_win('O')
 
@@ -76,7 +74,7 @@ while True:
     elif o_wins and not x_wins:
         print("O wins")
         break
-    elif free_coordinates == 0:
+    elif cells[0].count(" ") + cells[1].count(" ") + cells[2].count(" ") == 0:
         print("Draw")
         break
 
